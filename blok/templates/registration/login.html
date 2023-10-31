@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularz Logowania</title>
+</head>
+<body>
+    <h1>Formularz Logowania</h1>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label for="username">Nazwa użytkownika:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Zaloguj się</button>
+    </form>
+</body>
+</html>

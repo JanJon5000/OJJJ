@@ -1,18 +1,35 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Password, Site, File, Photo
+from .models import Site, File, Photo
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
+from django.shortcuts import render, redirect
 
-def file_list(request):
-    files = File.objects
-    return render(request, 'blok/file_list.html', {})
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return render(request, 'blok/index.html')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
 
-def site_list(request):
-    sites = Site.objects
-    return render(request, 'blok/site_list.html', {})
 
-def photo_list(request):
+def logout_view(request):
+    logout(request)
+    return redirect('blok/login.html')
+
+def index(request):
     photos = Photo.objects
-    return render(request, 'blok/photo_list.html', {})
+    sites = Site.objects
+    files = File.objects
+    
+    return render(request, 'blok/index.html', {})
 
-def password(request):
-    return render(request, 'blok/password.html', {})
+def main(request):
+    return redirect('login')
