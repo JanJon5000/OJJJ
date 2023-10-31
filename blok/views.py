@@ -4,6 +4,7 @@ from .models import Site, File, Photo
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 
 def login_view(request):
     if request.method == 'POST':
@@ -24,11 +25,11 @@ def logout_view(request):
     logout(request)
     return redirect('blok/login.html')
 
+@login_required
 def index(request):
     photos = Photo.objects
     sites = Site.objects
     files = File.objects
-    
     return render(request, 'blok/index.html', {})
 
 def main(request):
