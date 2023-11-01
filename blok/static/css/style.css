@@ -1,0 +1,80 @@
+h1, h2, h3, h4, h5, h6, p, a{
+    font-family: 'Courier New', monospace;
+}
+
+
+body {
+    background-color: black;
+    color: red;
+}
+
+a {
+    color: red; /* Kolor hiperłączy */
+    text-decoration: none; /* Usunięcie podkreślenia hiperłączy */
+    border-bottom: 1px solid red; /* Dodanie efektu podkreślenia po najechaniu na hiperłącze */
+}
+
+a:hover {
+    border-bottom: 2px solid red; /* Zwiększenie grubości podkreślenia po najechaniu */
+}
+
+img{
+    border: 2px solid red; /* Obramowanie obrazu */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.7); /* Cień obrazu */
+    max-width: 100%; /* Obraz nie wyjdzie poza obszar dostępny */
+}
+
+.grozny-naglowek {
+    position: absolute top;
+    font-family: 'Germania One', sans-serif;
+    color: red;
+    background-color: black;
+    padding: 10px;
+    border: 2px solid red;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.grozny-naglowek:hover{
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    align-items: left;
+    align-self: left;
+    table-layout: fixed;
+    border-spacing: fixed;
+}
+
+td, th {
+    width: 100%;
+    padding: 0; /* Usunięcie wewnętrznych odstępów */
+    border: none; /* Usunięcie obramowania */
+    margin: none;
+    white-space: normal
+}
+
+.menu {
+    background-color: black;
+    color: #fff;
+    padding: 5px 0;
+    text-align: left;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: red;
+}
