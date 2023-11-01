@@ -2,7 +2,8 @@
 {% load static %}
 <html>
     <head>
-        
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
             <script>
             $(document).ready(function() {
@@ -10,23 +11,20 @@
             });
         </script>
 
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-       
-        <style>
-            body {
-              font-family: 'Roboto', sans-serif;
-            }
-        </style>
     </head>
     <body>
-        <div class="header-bar">
-            <h1 class="page-title">OJJJ - Oliwia, Jan Jońcowie</h1>
+        <div class="menu">
+            <ul>
+                <li><h1 style="width: 100px;" class="grozny-naglowek">OJJJ</h1></li>
+                <li><a style="border: 2px solid red;" href ="https://docs.google.com/spreadsheets/d/11nUnbinNmjowEJhQNH6jBro8xyUa1yhWChHYk5wQMkg/edit#gid=0">Plan Jonka(google spreadsheets)</a></li>
+                <li><a style="border: 2px solid red;" href="https://plany.wel.wat.edu.pl/zima/WEL23EQ2S1.htm">Plan Jonka(strona Wat)</a></li>
+                <li><a style="border: 2px solid red;" href="https://wel.wat.edu.pl/przydatne-informacje/siatka-godzinowa-zajec/">Plan Jonka(siatka godzinowa)</a></li>
+                <li><a style="border: 2px solid red;" href="https://docs.google.com/spreadsheets/d/1hwS9BgmvOW_Bj_pfKLrsdVHXIyU5ysbnSl7sOpPQ-U8/edit#gid=0">TODOLIST</a></li>
+            </ul>
         </div>
-        <h1>
-            <a href ="https://docs.google.com/spreadsheets/d/11nUnbinNmjowEJhQNH6jBro8xyUa1yhWChHYk5wQMkg/edit#gid=0">Plan Jonka</a>
-        </h1>
+
+       <hr>
 
         <h1>
             Plan Oliwki

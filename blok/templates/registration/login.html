@@ -1,34 +1,27 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="pl">
 <head>
-    <!-- <style>
-        input[type="text"], input[type="password"] {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border: 1px solid #666;
-            border-radius: 3px;
-            width: 100%;
-            margin: 5px 0;
-        }
-    </style> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'login/style.css' %}"> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OJJJ</title>
 </head>
 <body>
-    <h1>OJJJ</h1>
-    <form method="post" action="{% url 'login' %}">
+    <h1 class="grozny-naglowek">OJJJ</h1>
+    <form class="formularz" method="post" action="{% url 'login' %}">
         {% csrf_token %}
-        <label for="username">Nazwa użytkownika:</label>
+        <label for="username">Użytkownik:</label>
         <input type="text" id="username" name="username" required>
         <br>
         <label for="password">Hasło:</label>
         <input type="password" id="password" name="password" required>
         <br>
-        <button type="submit">Zaloguj się</button>
+        <button type="submit">Zaloguj
+        </button>
     </form>
 </body>
 </html>
