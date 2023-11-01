@@ -5,6 +5,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import auth
 
 def login_view(request):
     if request.method == 'POST':
@@ -33,4 +34,8 @@ def index(request):
     return render(request, 'blok/index.html', {'photos':photos, 'files':files, 'sites':sites})
 
 def main(request):
-    return redirect('login')
+    if auth.get_user(request).is_authenticated:
+        return redirect('index')
+    else:
+        return redirect('login')
+    
