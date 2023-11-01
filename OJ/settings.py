@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yg0!1_si-kcyk*2=nwnsl3pplja^_ufz45=ojli)mdpg7h2!=0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'ojjj.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 LOGIN_REDIRECT_URL = '/blok/templates/blok/login.html'
 # Application definition
@@ -118,13 +118,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CSRF_TRUSTED_ORIGINS = ['https://ojjj.azurewebsites.net']
 MEDIA_URL = '/media/'
 MEDIA_ROOT = Path(BASE_DIR / 'media')
