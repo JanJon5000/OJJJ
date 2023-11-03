@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Site, File, Photo
+from .models import Site, Tab
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render, redirect
@@ -31,10 +31,10 @@ def logout_view(request):
 
 @login_required
 def index(request):
-    photos = Photo.objects.all()
+    tabs = Tab.objects.all()
     sites = Site.objects.all()
-    files = File.objects.all()
-    return render(request, 'blok/index.html', {'photos':photos, 'files':files, 'sites':sites})
+    
+    return render(request, 'blok/index.html', {'tabs':tabs, 'sites':sites})
 
 def main(request):
     if auth.get_user(request).is_authenticated:

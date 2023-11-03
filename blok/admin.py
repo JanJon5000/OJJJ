@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Site, Photo, File
+from .models import Site, Tab
 
-for i in [Site, Photo, File]:
+for i in [Site, Tab]:
     admin.site.register(i)
