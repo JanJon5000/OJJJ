@@ -100,6 +100,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "https://ojjj.azurewebsites.net"
+    # Inne zaufane źródła
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
