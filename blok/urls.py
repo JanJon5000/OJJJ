@@ -6,4 +6,3 @@ urlpatterns = [
     path('index', views.index, name='index'),
     path('', views.main, name='main')
 ]
-#############################asdasd

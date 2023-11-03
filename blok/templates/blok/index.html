@@ -2,6 +2,12 @@
 {% load static %}
 <html>
     <head>
+        <script>
+            window.addEventListener("load", function() {
+                window.open("index.html","_blank");
+            });
+        </script>
+
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -45,22 +51,6 @@
             {% for site in sites %}
                 <div>
                     <p><a href="{{site.URL_link}}">{{ site.name }}</a></p>
-                </div>
-            {% endfor %}
-            
-        <div><h2>Zdjecia</h2></div>
-
-            {% for photo in photos %}
-                <div>
-                    <img src={{photo.upload}}>
-                </div>
-            {% endfor %}
-        
-        <div><h2>Pliki</h2></div>
-
-            {% for file in files %}
-                <div>
-                    <p><a href={{file.upload}}>{{ file.name }}</a></p>
                 </div>
             {% endfor %}
         
