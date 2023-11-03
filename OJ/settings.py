@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yg0!1_si-kcyk*2=nwnsl3pplja^_ufz45=ojli)mdpg7h2!=0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', '.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'ojjj.azurewebsites.net']
 
 LOGIN_REDIRECT_URL = '/blok/templates/blok/login.html'
 # Application definition
