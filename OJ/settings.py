@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-yg0!1_si-kcyk*2=nwnsl3pplja^_ufz45=ojli)mdpg7h2!=0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'ojjj.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com', 'https://ojjj.azurewebsites.net']
 
 LOGIN_REDIRECT_URL = '/blok/templates/blok/login.html'
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'blok',
 ]
 
@@ -49,6 +50,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
+]
+
+CORS_ALLOWED_ORIGINS = [
+    "https://ojjj.azurewebsites.net"
 ]
 
 ROOT_URLCONF = 'OJ.urls'
