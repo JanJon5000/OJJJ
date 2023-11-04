@@ -7,7 +7,7 @@ It is also a great project for our education - it was built with Django framewor
 # Two main HTML pages
 
 Login page:
-<img href="login.png">
+<img src="login.png">
 
 site with all the good stuff:
-<img href="index.png">
+<img src="index.png">
