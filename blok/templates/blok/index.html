@@ -48,16 +48,16 @@
         <hr style="color: red;">
         <div><h2>Linki</h2></div>
 
-        {% regroup sites|dictsort:"name" by tag as site_groups %}
+        {% regroup sites by tag as site_groups %}
 
             {% for site_group in site_groups %}
-                <h2>{{ site_group.grouper }}</h2>
+                <h4>{{ site_group.grouper }}</h4>
                 {% for site in site_group.list|dictsort:"name" %}
                     <div>
                         <p><a target="_blank" href="{{ site.URL_link }}">{{ site.name }}</a></p>
                     </div>
                 {% endfor %}
         {% endfor %}
-                            
+                    
     </body>
 </html>

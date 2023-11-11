@@ -32,8 +32,8 @@ def logout_view(request):
 @login_required
 def index(request):
     tabs = Tab.objects.all()
-    sites = Site.objects.all()
-    
+    sites = Site.objects.all().order_by('tag').values()
+
     return render(request, 'blok/index.html', {'tabs':tabs, 'sites':sites})
 
 def main(request):
