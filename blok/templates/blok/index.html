@@ -6,7 +6,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
         
+        <link rel="icon" href="{% static '/OJJJ-favicon.ico' %}" type="image/x-icon">
+
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
@@ -44,11 +47,16 @@
         <hr style="color: red;">
         <div><h2>Linki</h2></div>
 
-            {% for site in sites %}
-                <div>
-                    <p><a target="_blank" href="{{site.URL_link}}">{{ site.name }}</a></p>
-                </div>
-            {% endfor %}
-        
+        {% regroup sites by tag as site_groups %}
+
+            {% for site_group in site_groups %}
+                <h4>{{ site_group.grouper }}</h4>
+                    {% for site in site_group.list %}
+                        <div>
+                            <p><a target="_blank" href="{{ site.URL_link }}">{{ site.name }}</a></p>
+                        </div>
+                    {% endfor %}
+        {% endfor %}
+                    
     </body>
 </html>
