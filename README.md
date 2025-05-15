@@ -12,5 +12,5 @@ Login page:
 
 
 
-Site with all the good stuff:
+Site with all the good stuff (behind the login page):
 <img src="index.png">
